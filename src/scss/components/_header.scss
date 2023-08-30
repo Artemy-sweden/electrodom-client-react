@@ -1,0 +1,233 @@
+header {
+  z-index: 100;
+  transition: 0.5s;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: $dark;
+}
+.header__inner {
+  position: relative;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.logo__img {
+  z-index: 10;
+  background: $dark;
+  border-right: 2px solid $yellow;
+}
+.logo__img img {
+  max-width: 100%;
+  width: 32px;
+  margin-right: 10px;
+}
+.logo__text {
+  z-index: 3;
+  margin-left: 10px;
+  animation: logo-move-right 1.5s ease-in-out;
+}
+.logo__text b {
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+}
+.logo__text p {
+  color: $yellow;
+  font-size: 13px;
+}
+.burger {
+  display: none;
+}
+nav ul {
+  display: flex;
+  /* 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+nav ul li {
+  padding: 0 40px;
+}
+nav ul li a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+nav ul li a::after {
+  display: block;
+  content: "";
+  transition: 0.3s;
+  width: 0;
+  height: 2px;
+  margin-top: 5px;
+  background: $yellow;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+.active-link {
+  color: $yellow;
+}
+.active-link::after {
+  display: block;
+  content: "";
+  transition: 0.3s;
+  width: 100%;
+  height: 2px;
+  margin-top: 5px;
+  background: $yellow;
+}
+.person {
+  width: 140px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cart {
+  position: relative;
+}
+.cart img {
+  width: 36px;
+}
+.cart span {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -3px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  border-radius: 50%;
+  background: red;
+  color: #fff;
+}
+.account {
+  position: relative;
+}
+.account img {
+  width: 28px;
+}
+
+@media screen and (max-width: 901px) {
+  .logo__img img {
+    width: 28px;
+  }
+  .logo__text b {
+    font-size: 14px;
+  }
+  .logo__text p {
+    font-size: 11px;
+  }
+  nav ul li a {
+    font-size: 13px;
+  }
+  .person {
+    width: 90px;
+  }
+  .cart img {
+    width: 30px;
+  }
+  .account img {
+    width: 24px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .logo__text {
+    display: none;
+  }
+  .logo__img {
+    border: none;
+  }
+  .logo img {
+    margin-right: 0;
+  }
+  nav ul li {
+    padding: 0 25px;
+  }
+  .person {
+    width: auto;
+  }
+  .cart {
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 551px) {
+  header {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  nav {
+    transition: 0.5s;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    background: $dark;
+  }
+  nav ul {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  nav ul li {
+    margin: 30px 0;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  .burger {
+    z-index: 50;
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 0 19px;
+  }
+  .burger::before,
+  .burger::after {
+    transition: 0.3s;
+    display: block;
+    content: "";
+    margin: 12px 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+  }
+  .active-menu .header__inner nav {
+    left: 0;
+  }
+  .active-menu .header__inner .burger::before {
+    margin: 0;
+    transform: rotate(45deg) translate(10px, 8px);
+  }
+  .active-menu .header__inner .burger::after {
+    margin: 0;
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+}
+@keyframes logo-move-right {
+  0% {
+    margin-left: -100%;
+  }
+  100% {
+    margin-left: 10px;
+  }
+}
