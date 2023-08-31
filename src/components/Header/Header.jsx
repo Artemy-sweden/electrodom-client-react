@@ -35,11 +35,11 @@ function Header() {
         </nav>
         <div className="person">
           <a href="#" className="cart">
-            <img src="../assets/img/shopping-cart.png" alt="cart" />
+            <img src="../assets/img/cart1.png" alt="cart" />
             <span>4</span>
           </a>
           <a href="#" className="account">
-            <img src="../assets/img/user.png" alt="user" />
+            <img src="../assets/img/user2.png" alt="user" />
           </a>
         </div>
       </div>

@@ -19,9 +19,9 @@ function Footer() {
             </li>
           </ul>
           <div className="socials">
-            <img src="#" alt="" />
-            <img src="#" alt="" />
-            <img src="#" alt="" />
+            <img src="../assets/img/inst.png" alt="" />
+            <img src="../assets/img/inst.png" alt="" />
+            <img src="../assets/img/inst.png" alt="" />
           </div>
         </div>
         <div className="footer__section">
