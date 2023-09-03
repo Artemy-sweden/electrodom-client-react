@@ -8,6 +8,7 @@ import Catalog from "./Catalog";
 import CatalogCategories from "./CatalogCategories";
 import NotFound from "./NotFound";
 import Cart from "./Cart";
+import Product from "./Product";
 
 function Home() {
   const [items, setItems] = React.useState([]);
@@ -212,6 +213,7 @@ function Home() {
         <Catalog />
         <Cart />
         <NotFound />
+        <Product />
       </div>
       <Footer />
     </>
