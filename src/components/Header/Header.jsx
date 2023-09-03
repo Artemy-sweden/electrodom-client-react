@@ -1,3 +1,5 @@
+import { NavLink, Link } from "react-router-dom";
+
 function onClickBurger() {
   if (window.innerWidth <= 551) {
     var header = document.querySelector("header");
@@ -10,7 +12,7 @@ function Header() {
     <header>
       <div className="header__inner">
         <div className="burger" onClick={onClickBurger}></div>
-        <a href="#" className="logo">
+        <NavLink to="/" className="logo">
           <div className="logo__img">
             <img src="../assets/img/logo.png" alt="logo" />
           </div>
@@ -18,29 +20,29 @@ function Header() {
             <b>ElectroDom</b>
             <p>купи наконец люстру</p>
           </div>
-        </a>
+        </NavLink>
 
         <nav>
           <ul>
             <li>
-              <a href="#">Каталог</a>
+              <Link to="/catalog">Каталог</Link>
             </li>
             <li>
-              <a href="#">О нас</a>
+              <Link to="/about">О нас</Link>
             </li>
             <li>
-              <a href="#">Частые вопросы</a>
+              <Link to="/faq">Частые вопросы</Link>
             </li>
           </ul>
         </nav>
         <div className="person">
-          <a href="#" className="cart">
+          <NavLink to="/cart" className="cart">
             <img src="../assets/img/cart1.png" alt="cart" />
             <span>4</span>
-          </a>
-          <a href="#" className="account">
+          </NavLink>
+          <NavLink to="/account" className="account">
             <img src="../assets/img/user2.png" alt="user" />
-          </a>
+          </NavLink>
         </div>
       </div>
     </header>

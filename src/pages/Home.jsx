@@ -2,13 +2,6 @@ import React from "react";
 import axios from "axios";
 
 import Card from "../components/Card/Card";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import Catalog from "./Catalog";
-import CatalogCategories from "./CatalogCategories";
-import NotFound from "./NotFound";
-import Cart from "./Cart";
-import Product from "./Product";
 
 function Home() {
   const [items, setItems] = React.useState([]);
@@ -196,7 +189,6 @@ function Home() {
   }, []);
   return (
     <>
-      <Header />
       {console.log(items)}
       <div className="wrapper">
         <h4>Главная</h4>
@@ -205,17 +197,11 @@ function Home() {
         </div>
         Filters
         <div className="items">
-          {mass.map((item, index) => (
+          {items.map((item, index) => (
             <Card item={item} key={index} />
           ))}
         </div>
-        <CatalogCategories />
-        <Catalog />
-        <Cart />
-        <NotFound />
-        <Product />
       </div>
-      <Footer />
     </>
   );
 }

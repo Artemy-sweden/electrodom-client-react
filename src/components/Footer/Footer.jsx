@@ -1,10 +1,12 @@
+import { NavLink, Link } from "react-router-dom";
+
 function Footer() {
   return (
     <footer>
       <div className="footer__inner">
         <div className="footer__section">
           <h4>
-            <a href="#">Магазин</a>
+            <Link to="/">Магазин</Link>
           </h4>
           <ul>
             <li>г. Любань, ул. Интернациональная, 1 (магазин “Сезам”)</li>
@@ -26,7 +28,7 @@ function Footer() {
         </div>
         <div className="footer__section">
           <h4>
-            <a href="#">Каталог</a>
+            <Link to="/catalog">Каталог</Link>
           </h4>
           <ul>
             <li>
