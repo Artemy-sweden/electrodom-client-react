@@ -7,6 +7,13 @@ function onClickBurger() {
   }
 }
 
+function closeBurger() {
+  if (window.innerWidth <= 551) {
+    var header = document.querySelector("header");
+    header.classList.remove("active-menu");
+  }
+}
+
 function Header() {
   return (
     <header>
@@ -25,13 +32,19 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <Link to="/catalog">Каталог</Link>
+              <Link to="/catalog" onClick={closeBurger}>
+                Каталог
+              </Link>
             </li>
             <li>
-              <Link to="/about">О нас</Link>
+              <Link to="/about" onClick={closeBurger}>
+                О нас
+              </Link>
             </li>
             <li>
-              <Link to="/faq">Частые вопросы</Link>
+              <Link to="/purchases" onClick={closeBurger}>
+                Покупки
+              </Link>
             </li>
           </ul>
         </nav>

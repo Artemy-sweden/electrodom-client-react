@@ -1,0 +1,77 @@
+.about__container {
+  margin: 30px 0;
+  h4 {
+    margin: 20px 0;
+    letter-spacing: 0.05em;
+    font-size: 36px;
+  }
+  p {
+    padding: 10px 0;
+    text-align: justify;
+    font-size: 18px;
+  }
+}
+.answer-container {
+  max-width: 720px;
+}
+.accordeon {
+  width: 100%;
+}
+.accordeon__button {
+  font-size: 16px;
+  background-color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-bottom: 1px dotted #777;
+  outline: none;
+  transition: 0.4s;
+}
+.accordeon__button.answer-active,
+.accordeon__button:hover {
+  background-color: #ccc;
+}
+.accordeon__panel {
+  width: 100%;
+
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  border-bottom: 1px solid #777;
+}
+.accordeon__button::after {
+  content: "\02795";
+  float: right;
+  margin-left: 5px;
+}
+.answer-active::after {
+  content: "\2796";
+}
+@media screen and (max-width: 900px) {
+  .about__container {
+    margin: 0;
+  }
+  .accordeon__button {
+    padding: 8px;
+  }
+  .accordeon {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 551px) {
+  .accordeon {
+    max-width: 320px;
+  }
+  .accordeon__button {
+    padding: 5px;
+  }
+  .accordeon__panel {
+    padding: 0 5px;
+  }
+  .accordeon__panel p {
+    font-size: 13px;
+  }
+}

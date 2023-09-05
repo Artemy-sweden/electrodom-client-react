@@ -1,12 +1,11 @@
 import Filters from "../components/Filters/Filters";
+import SearchBox from "../components/SearchBox/SearchBox";
 
 function Catalog() {
   return (
     <div className="wrapper">
       <h4>Каталог</h4>
-      <div className="search-box">
-        <input type="text" placeholder="давай ищи..." />
-      </div>
+      <SearchBox />
       Filters
       <div className="items">cards...</div>
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 
 import Card from "../components/Card/Card";
+import SearchBox from "../components/SearchBox/SearchBox";
 
 function Home() {
   const [items, setItems] = React.useState([]);
@@ -190,17 +191,13 @@ function Home() {
   return (
     <>
       {console.log(items)}
-      <div className="wrapper">
-        <h4>Главная</h4>
-        <div className="search-box">
-          <input type="text" placeholder="давай ищи..." />
-        </div>
-        Filters
-        <div className="items">
-          {items.map((item, index) => (
-            <Card item={item} key={index} />
-          ))}
-        </div>
+      <h4>Главная</h4>
+      <SearchBox />
+      Filters
+      <div className="items">
+        {items.map((item, index) => (
+          <Card item={item} key={index} />
+        ))}
       </div>
     </>
   );

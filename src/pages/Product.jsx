@@ -1,4 +1,12 @@
 function Product() {
+  // const [productData, setProductData] = React.useState({});
+  // React.useEffect(() => {
+  //   async function getProductData() {
+  //     const resp = await axios.get("http://194.62.19.226:8080/goods");
+  //     setProductData(resp.data.results);
+  //   }
+  //   getData();
+  // }, [])
   return (
     <>
       <div class="product">
