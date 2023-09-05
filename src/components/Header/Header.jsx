@@ -28,7 +28,6 @@ function Header() {
             <p>купи наконец люстру</p>
           </div>
         </NavLink>
-
         <nav>
           <ul>
             <li>
