@@ -1,17 +1,23 @@
+import React from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
 function Product() {
-  // const [productData, setProductData] = React.useState({});
-  // React.useEffect(() => {
-  //   async function getProductData() {
-  //     const resp = await axios.get("http://194.62.19.226:8080/goods");
-  //     setProductData(resp.data.results);
-  //   }
-  //   getData();
-  // }, [])
+  const { id } = useParams();
+  const [productData, setProductData] = React.useState([]);
+  React.useEffect(() => {
+    fetch(`https://63fe15b61626c165a0a7034c.mockapi.io/items/${id}`)
+      .then((res) => res.json())
+      .then((json) => setProductData(json))
+      .catch((error) => console.warn(error))
+      .finally(console.log("success"));
+  }, []);
   return (
     <>
-      <div class="product">
-        <div class="product__photos">
-          <div class="main__photo">
+      {console.log(productData)}
+      <div className="product">
+        <div className="product__photos">
+          <div className="main__photo">
             <img src="../assets/img/люстра 2.png" alt="#" />
           </div>
 
@@ -20,11 +26,11 @@ function Product() {
           <img src="../assets/img/люстра 2.png" alt="#" />
           <img src="../assets/img/люстра 2.png" alt="#" />
         </div>
-        <div class="product__content">
-          <h4>Svetilnik-debilnik</h4>
-          <div class="product__rating">***** 5,0 (16)</div>
-          <div class="product__price">$999</div>
-          <div class="product__short">
+        <div className="product__content">
+          <h4>{productData.title}</h4>
+          <div className="product__rating">***** 5,0 (16)</div>
+          <div className="product__price">{productData.price}</div>
+          <div className="product__short">
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam
               iste vel magni et aperiam. Blanditiis dicta voluptates temporibus
@@ -36,13 +42,13 @@ function Product() {
               iste vel magni et aperiam. Blanditiis dicta voluptates temporibus
             </p>
           </div>
-          <div class="product__buttons">
+          <div className="product__buttons">
             <button>Buy</button>
             <button>Purhcase</button>
           </div>
         </div>
       </div>
-      <div class="product__section">
+      <div className="product__section">
         <h4>Opisanie</h4>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde
@@ -55,7 +61,7 @@ function Product() {
           commodi magnam.
         </p>
       </div>
-      <div class="product__section">
+      <div className="product__section">
         <h4>Haracteristici</h4>
         <ul>
           <li>
@@ -72,18 +78,18 @@ function Product() {
           </li>
         </ul>
       </div>
-      <div class="product__section">
+      <div className="product__section">
         <h4>Comments</h4>
-        <div class="comments__container">
-          <div class="comment">
-            <div class="user">
-              <div class="avatar">P</div>
-              <div class="data">
-                <div class="name">Petrikov, 21.08.2023</div>
-                <div class="rating">****</div>
+        <div className="comments__container">
+          <div className="comment">
+            <div className="user">
+              <div className="avatar">P</div>
+              <div className="data">
+                <div className="name">Petrikov, 21.08.2023</div>
+                <div className="rating">****</div>
               </div>
             </div>
-            <div class="text">
+            <div className="text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
               soluta quo voluptatibus praesentium numquam! Dignissimos suscipit
               earum, sunt a optio maiores cum autem! Illum, dolor alias iure
@@ -104,21 +110,21 @@ function Product() {
               voluptatum. A quibusdam voluptatibus cupiditate enim nam molestiae
               atque.
             </div>
-            <div class="images">
+            <div className="images">
               <img src="../assets/img/люстра 2.png" alt="#" />
               <img src="../assets/img/люстра 2.png" alt="#" />
               <img src="../assets/img/люстра 2.png" alt="#" />
             </div>
           </div>
-          <div class="comment">
-            <div class="user">
-              <div class="avatar">P</div>
-              <div class="data">
-                <div class="name">Petrikov, 21.08.2023</div>
-                <div class="rating">****</div>
+          <div className="comment">
+            <div className="user">
+              <div className="avatar">P</div>
+              <div className="data">
+                <div className="name">Petrikov, 21.08.2023</div>
+                <div className="rating">****</div>
               </div>
             </div>
-            <div class="text">
+            <div className="text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
               soluta quo voluptatibus praesentium numquam! Dignissimos suscipit
               earum, sunt a optio maiores cum autem! Illum, dolor alias iure
@@ -139,7 +145,7 @@ function Product() {
               voluptatum. A quibusdam voluptatibus cupiditate enim nam molestiae
               atque.
             </div>
-            <div class="images">
+            <div className="images">
               <img src="../assets/img/люстра 2.png" alt="#" />
               <img src="../assets/img/люстра 2.png" alt="#" />
               <img src="../assets/img/люстра 2.png" alt="#" />

@@ -16,7 +16,7 @@ function Categories() {
   return (
     <div className="wrapper">
       {console.log(categories)}
-      <h4>Категории в каталоге</h4>
+      <h4>Каталог</h4>
       <SearchBox />
       <div className="categories">
         {categories.map((obj) => (

@@ -20,10 +20,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<CatalogCategories />} />
+          <Route path="/catalog/:category" element={<Catalog />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<About />} />
           <Route path="/purchases" element={<Purchases />} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/catalog/:category/:item/:id" element={<Product />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
