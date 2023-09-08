@@ -2,24 +2,23 @@ import React from "react";
 import axios from "axios";
 
 import Card from "../components/Card";
-import SearchBox from "../components/SearchBox/SearchBox";
+import SearchBox from "../components/SearchBox";
 
-function Home({ onAddToCart, onRemoveFromCart, cartItems }) {
+function Home({ onAddToCart, onRemoveFromCart, cartItems, url }) {
   const [cards, setCards] = React.useState([]);
+  const [isHomeLoaded, setIsHomeLoaded] = React.useState(false);
 
   React.useEffect(() => {
-    // async function getData() {
-    //   const cardsResp = await axios.get("http://localhost:3001/cards");
-    //   setItems(cardsResp.data.results);
-    // }
-    // getData();
-    fetch("http://localhost:3001/cards")
-      .then((res) => res.json())
-      .then((json) => setCards(json))
-      .catch((error) => console.log(error));
+    async function getHomeInfo() {
+      const homeResp = await axios.get(`${url}/cards`);
+      setCards(homeResp.data);
+      setIsHomeLoaded(true);
+    }
+    getHomeInfo();
   }, []);
-  return (
+  return isHomeLoaded ? (
     <>
+      {console.log("Home renderrred")}
       <h4>Главная</h4>
       <SearchBox />
       Filters
@@ -37,6 +36,8 @@ function Home({ onAddToCart, onRemoveFromCart, cartItems }) {
         ))}
       </div>
     </>
+  ) : (
+    <h1>Loading</h1>
   );
 }
 export default Home;

@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { NavLink, Link } from "react-router-dom";
 
-import SearchBox from "../components/SearchBox/SearchBox";
+import SearchBox from "../components/SearchBox";
 
 const catg = [
   {
@@ -34,7 +34,6 @@ function Categories() {
   }, []);
   return (
     <div className="wrapper">
-      {console.log(categories)}
       <h4>Каталог</h4>
       <SearchBox />
       <div className="categories">

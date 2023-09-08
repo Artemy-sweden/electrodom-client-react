@@ -1,8 +1,11 @@
+import React from "react";
+
 import Card from "../components/Card";
 
 function Cart({ cartItems, onAddToCart, onRemoveFromCart }) {
   return (
     <>
+      {console.log("Cart renderrred")}
       <h4>Корзина</h4>
       <div className="items">
         {cartItems.map((card) => (

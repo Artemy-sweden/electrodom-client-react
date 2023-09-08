@@ -1,6 +1,7 @@
+import React from "react";
+import axios from "axios";
 import "./scss/app.scss";
 import { Routes, Route } from "react-router-dom";
-import React from "react";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -12,6 +13,9 @@ import CatalogCategories from "./pages/CatalogCategories";
 import NotFound from "./pages/NotFound";
 import Cart from "./pages/Cart";
 import Product from "./pages/Product";
+
+//const url = "http://localhost:3001";
+const url = "https://63fe15b61626c165a0a7034c.mockapi.io";
 
 const mass = [
   {
@@ -190,20 +194,31 @@ const mass = [
 
 function App() {
   const [cartItems, setCartItems] = React.useState([]);
+  const [inputValue, setInputValue] = React.useState("");
+
+  React.useEffect(() => {
+    async function getCartItems() {
+      const cartResp = await axios.get(`${url}/cart`);
+      setCartItems(cartResp.data);
+    }
+    getCartItems();
+  }, []);
 
   const onAddToCart = (obj) => {
     if (cartItems.find((item) => Number(item.id) === Number(obj.id))) {
       onRemoveFromCart(obj);
     } else {
+      axios.post(`${url}/cart`, obj);
       setCartItems((prev) => [...prev, obj]);
     }
   };
   const onRemoveFromCart = (obj) => {
+    axios.delete(`${url}/cart/${obj.id}`);
     setCartItems((prev) =>
       prev.filter((item) => Number(item.id) !== Number(obj.id))
     );
   };
-  console.log(cartItems);
+  //console.log(cartItems);
 
   return (
     <>
@@ -217,6 +232,7 @@ function App() {
                 onAddToCart={(item) => onAddToCart(item)}
                 onRemoveFromCart={(item) => onRemoveFromCart(item)}
                 cartItems={cartItems}
+                url={url}
               />
             }
           />
@@ -228,6 +244,7 @@ function App() {
                 onAddToCart={(item) => onAddToCart(item)}
                 onRemoveFromCart={(item) => onRemoveFromCart(item)}
                 cartItems={cartItems}
+                url={url}
               />
             }
           />
