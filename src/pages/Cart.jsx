@@ -1,9 +1,20 @@
-function Cart() {
+import Card from "../components/Card";
+
+function Cart({ cartItems, onAddToCart, onRemoveFromCart }) {
   return (
     <>
       <h4>Корзина</h4>
-      <div className="items"></div>
-      Filters || Make an order
+      <div className="items">
+        {cartItems.map((card) => (
+          <Card
+            card={card}
+            onAddToCart={(item) => onAddToCart(item)}
+            onRemoveFromCart={(item) => onRemoveFromCart(item)}
+            status={true}
+            key={card.id}
+          />
+        ))}
+      </div>
     </>
   );
 }

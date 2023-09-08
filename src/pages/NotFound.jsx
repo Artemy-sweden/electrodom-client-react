@@ -1,7 +1,7 @@
 function NotFound() {
   return (
     <div className="error">
-      <h2>404</h2>
+      <h1>404</h1>
       <div className="error__text">
         <p>Упс, кажется, что-то пошло не так</p>
         <p>Проверьте правильность введённого адреса или страницы</p>

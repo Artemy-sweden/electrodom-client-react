@@ -14,7 +14,7 @@ function closeBurger() {
   }
 }
 
-function Header() {
+function Header({ cartCount }) {
   return (
     <header>
       <div className="header__inner">
@@ -51,7 +51,7 @@ function Header() {
         <div className="person">
           <NavLink to="/cart" className="cart">
             <img src="../assets/img/cart1.png" alt="cart" />
-            <span>4</span>
+            <span>{cartCount}</span>
           </NavLink>
           <NavLink to="/account" className="account">
             <img src="../assets/img/user2.png" alt="user" />

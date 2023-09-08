@@ -4,14 +4,33 @@ import { NavLink, Link } from "react-router-dom";
 
 import SearchBox from "../components/SearchBox/SearchBox";
 
+const catg = [
+  {
+    category_name: "Lustri",
+  },
+  {
+    category_name: "Lampi",
+  },
+  {
+    category_name: "Banana",
+  },
+  {
+    category_name: "Cheese",
+  },
+];
+
 function Categories() {
   const [categories, setCategories] = React.useState([]);
   React.useEffect(() => {
-    async function getCategories() {
-      const resp = await axios.get("http://194.62.19.226:8080/categories");
-      setCategories(resp.data.results);
-    }
-    getCategories();
+    // async function getCategories() {
+    //   const resp = await axios.get("http://194.62.19.226:8080/categories");
+    //   setCategories(resp.data.results);
+    // }
+    // getCategories();
+    fetch("http://localhost:3001/categories")
+      .then((res) => res.json())
+      .then((json) => setCategories(json))
+      .catch((error) => console.log(error));
   }, []);
   return (
     <div className="wrapper">
