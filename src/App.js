@@ -193,15 +193,28 @@ const mass = [
 ];
 
 function App() {
+  const [cards, setCards] = React.useState([]);
+  const [categories, setCategories] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
-  const [inputValue, setInputValue] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
-    async function getCartItems() {
-      const cartResp = await axios.get(`${url}/cart`);
-      setCartItems(cartResp.data);
+    async function fetchData() {
+      try {
+        const [homeResp, categoriesResp, cartResp] = await Promise.all([
+          axios.get(`${url}/cards`),
+          axios.get("http://localhost:3001/categories"),
+          axios.get(`${url}/cart`),
+        ]);
+        setIsLoading(false);
+        setCards(homeResp.data);
+        setCategories(categoriesResp.data);
+        setCartItems(cartResp.data);
+      } catch (error) {
+        console.warn("errorrrr", error);
+      }
     }
-    getCartItems();
+    fetchData();
   }, []);
 
   const onAddToCart = (obj) => {
@@ -231,12 +244,16 @@ function App() {
               <Home
                 onAddToCart={(item) => onAddToCart(item)}
                 onRemoveFromCart={(item) => onRemoveFromCart(item)}
+                cards={cards}
                 cartItems={cartItems}
-                url={url}
+                isLoading={isLoading}
               />
             }
           />
-          <Route path="/catalog" element={<CatalogCategories />} />
+          <Route
+            path="/catalog"
+            element={<CatalogCategories categories={categories} />}
+          />
           <Route
             path="/catalog/:category"
             element={

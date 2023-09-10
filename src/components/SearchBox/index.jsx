@@ -1,7 +1,12 @@
-function SearchBox() {
+function SearchBox({ onChangeInputValue, inputValue }) {
   return (
     <div className="search-box">
-      <input type="text" placeholder="давай ищи..." />
+      <input
+        type="text"
+        placeholder="давай ищи..."
+        onChange={onChangeInputValue}
+        value={inputValue}
+      />
     </div>
   );
 }
