@@ -1,7 +1,5 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
-
-import SearchBox from "../components/SearchBox";
+import { NavLink } from "react-router-dom";
 
 function CatalogCategories({ categories }) {
   console.log("categories renderrrrrraqd");
@@ -9,7 +7,7 @@ function CatalogCategories({ categories }) {
   return (
     <>
       <h4>Каталог</h4>
-      <SearchBox />
+
       <div className="categories">
         {categories.map((obj, index) => (
           <NavLink

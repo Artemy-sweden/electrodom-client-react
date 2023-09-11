@@ -252,7 +252,12 @@ function App() {
           />
           <Route
             path="/catalog"
-            element={<CatalogCategories categories={categories} />}
+            element={
+              <CatalogCategories
+                categories={categories}
+                isLoading={isLoading}
+              />
+            }
           />
           <Route
             path="/catalog/:category"
