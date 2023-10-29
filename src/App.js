@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import Cart from "./pages/Cart";
 import Product from "./pages/Product";
 import LoginPage from "./pages/Login";
+import Account from "./pages/Account";
 
 const url = "http://localhost:3001";
 // const url = "https://63fe15b61626c165a0a7034c.mockapi.io";
@@ -113,6 +114,16 @@ function App() {
           <Route path="/purchases" element={<Purchases />} />
           <Route path="/catalog/:category/:item/:id" element={<Product />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/account"
+            element={
+              <Account
+                cartItems={cartItems}
+                onAddProduct={(item) => onAddProduct(item)}
+                onRemoveProduct={(item) => onRemoveProduct(item)}
+              />
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

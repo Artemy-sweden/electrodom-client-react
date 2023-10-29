@@ -1,0 +1,151 @@
+.account__wrapper {
+  max-width: 75%;
+  margin: 50px auto;
+  font-family: "Inter", sans-serif;
+  .personal__data__container {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+  }
+  .personal__photo {
+    width: 30vh;
+    aspect-ratio: 1;
+    background-color: aqua;
+    border-radius: 50%;
+  }
+  .personal__data_description {
+    margin-left: 100px;
+    height: 100%;
+    display: flexbox;
+    align-items: center;
+  }
+  p {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+  .history__container {
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 45%);
+    .history__item {
+      margin: 20px 0;
+      width: 100%;
+      aspect-ratio: 1;
+      background-color: blueviolet;
+    }
+  }
+
+  button {
+    display: flex;
+    margin: 20px 0;
+    font-size: 20px;
+    border-radius: 7px;
+    color: #f1f1f1;
+    background-color: #181818;
+    padding: 10px 15px;
+  }
+  button:hover {
+    background-color: black;
+    cursor: pointer;
+  }
+  .cards__in__account {
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 20%);
+  }
+  .card__in__account {
+    margin: 10px 0;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: blueviolet;
+  }
+  label {
+    display: block;
+  }
+  input,
+  textarea {
+    background-color: #f1f1f1;
+    border: none;
+    margin: 5px 0;
+    padding: 8px 10px;
+    width: 30%;
+  }
+  textarea {
+    display: block;
+    resize: none;
+    width: 70%;
+  }
+  .not__send {
+    display: flex;
+    margin: 20px auto;
+  }
+  #zvezda::after,
+  .determine__star::before {
+    content: "*";
+    font-size: 18px;
+    color: red;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .account__wrapper {
+    .personal__photo {
+      width: 175px;
+    }
+    .personal__data_description {
+      margin-left: 60px;
+    }
+    p {
+      padding: 6px 0;
+      font-size: 14px;
+    }
+    button {
+      margin: 14px 0;
+      font-size: 16px;
+      padding: 5px 8px;
+    }
+    textarea {
+      width: 80%;
+    }
+    .cards__in__account {
+      grid-template-columns: repeat(3, 27%);
+    }
+  }
+}
+@media screen and (max-width: 551px) {
+  .account__wrapper {
+    .acc__card__block,
+    .history__block,
+    .feedback__block,
+    .personal__data__container {
+      display: none;
+    }
+    .account__wrapper h4 {
+      margin: 30px 0;
+      font-size: 14px;
+    }
+    .main__wripper {
+      height: 100%;
+      width: 100%;
+      margin: 25px 0;
+      position: relative;
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: repeat(2, 45%);
+    }
+    .personal__data__wrapper,
+    .history__wrapper,
+    .account_card,
+    .account__feedback {
+      margin: 10px 0;
+      background-color: #d9d9d9;
+      text-align: center;
+    }
+  }
+}
