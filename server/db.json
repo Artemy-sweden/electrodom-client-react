@@ -4,7 +4,7 @@
       "id": 0,
       "name": "Lustra obiknovennaja 220V",
       "provider": "Beltelecom",
-      "category": "category 2",
+      "category": "category_2",
       "price": 145.5,
       "count": 1,
       "image": "url",
@@ -19,7 +19,7 @@
       "id": 1,
       "name": "Lampa neobiknovennaja ahahaahah",
       "provider": "Beltelecom",
-      "category": "category 2",
+      "category": "category_2",
       "price": 150,
       "count": 1,
       "image": "url",
@@ -57,6 +57,21 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "discount": {
         "status": true,
+        "value": "30%"
+      }
+    },
+    {
+      "id": 4,
+      "name": "LED podsvetka-svetka hihihi",
+      "provider": "Kiivstar",
+      "category": "Lampi",
+      "price": 500,
+      "count": 1,
+      "image": "url",
+      "rating": 3.5,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "discount": {
+        "status": false,
         "value": "30%"
       }
     }
@@ -64,18 +79,26 @@
   "products": [
     {
       "id": 0,
-      "name": "Lampa neobiknovennaja ahahaahah",
+      "name": "LUMPA neobiknovennaja ahahaahah",
       "provider": "Beltelecom",
       "category": "Lustri",
       "price": 150,
       "count": 1,
       "photos": [
-        "https://eurosvet.by/image/cache/catalog/euro/5/804615043-potolochnaya-lyustra-344-smart-750x750.jpg",
-        "https://eurosvet.by/image/cache/catalog/euro/5/804615043-potolochnaya-lyustra-344-smart-750x750.jpg",
-        "https://eurosvet.by/image/cache/catalog/euro/5/804615043-potolochnaya-lyustra-344-smart-750x750.jpg"
+        {
+          "id": 0,
+          "path": "http://localhost:3000/assets/img/люстра 2.png"
+        },
+        {
+          "id": 1,
+          "path": "http://localhost:3000/assets/img/люстра 2.png"
+        },
+        {
+          "id": 2,
+          "path": "http://localhost:3000/assets/img/люстра 2.png"
+        }
       ],
       "rating": 4.5,
-
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "discount": {
         "status": false,
@@ -127,22 +150,35 @@
         {
           "user": {
             "username": "Alex",
-            "rating": 3.0
+            "rating": 3
           },
           "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "photos": [
-            "https://eurosvet.by/image/cache/catalog/euro/5/804615043-potolochnaya-lyustra-344-smart-750x750.jpg",
-            "https://eurosvet.by/image/cache/catalog/euro/5/804615043-potolochnaya-lyustra-344-smart-750x750.jpg",
-            "https://eurosvet.by/image/cache/catalog/euro/5/804615043-potolochnaya-lyustra-344-smart-750x750.jpg"
+            {
+              "id": 0,
+              "path": "http://localhost:3000/assets/img/люстра 2.png"
+            },
+            {
+              "id": 1,
+              "path": "http://localhost:3000/assets/img/люстра 2.png"
+            },
+            {
+              "id": 2,
+              "path": "http://localhost:3000/assets/img/люстра 2.png"
+            }
           ]
         },
         {
           "user": {
             "username": "Boris",
-            "rating": 5.0
+            "rating": 5
           },
           "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          "photos": ["url", "url2", "url3"]
+          "photos": [
+            "url",
+            "url2",
+            "url3"
+          ]
         }
       ]
     },
@@ -153,9 +189,12 @@
       "category": "Lustri",
       "price": 150,
       "count": 1,
-      "photos": ["url", "url2", "url3"],
+      "photos": [
+        "url",
+        "url2",
+        "url3"
+      ],
       "rating": 4.5,
-
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "discount": {
         "status": false,
@@ -187,32 +226,51 @@
         {
           "user": {
             "username": "Alex",
-            "rating": 3.0
+            "rating": 3
           },
           "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          "photos": ["url", "url2", "url3"]
+          "photos": [
+            "url",
+            "url2",
+            "url3"
+          ]
         }
       ]
     }
   ],
   "categories": [
     {
-      "category_name": "category 1"
+      "category_name": "category_1"
     },
     {
-      "category_name": "category 2"
+      "category_name": "category_2"
     },
     {
-      "category_name": "category 3"
+      "category_name": "category_3"
     },
     {
-      "category_name": "category 4"
+      "category_name": "category_4"
     },
     {
-      "category_name": "category 5"
+      "category_name": "category_5"
     }
   ],
   "cart": [
+    {
+      "id": 1,
+      "name": "Lampa neobiknovennaja ahahaahah",
+      "provider": "Beltelecom",
+      "category": "category_2",
+      "price": 150,
+      "count": 1,
+      "image": "url",
+      "rating": 3.5,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "discount": {
+        "status": false,
+        "value": "30%"
+      }
+    },
     {
       "id": 2,
       "name": "LED podsvetka-svetka hihihi",
@@ -229,19 +287,48 @@
       }
     },
     {
-      "id": 3,
-      "name": "Lustra obiknovennaja 220V",
-      "provider": "Beltelecom",
-      "category": "Lustri",
-      "price": 145.5,
+      "id": 4,
+      "name": "LED podsvetka-svetka hihihi",
+      "provider": "Kiivstar",
+      "category": "Lampi",
+      "price": 500,
       "count": 1,
       "image": "url",
       "rating": 3.5,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "discount": {
-        "status": true,
+        "status": false,
         "value": "30%"
       }
+    }
+  ],
+  "filters": [
+    {
+      "type": "checkbox",
+      "title": "cars",
+      "values": [
+        "lamborgini",
+        "ferrari",
+        "tesla",
+        "cow?"
+      ]
+    },
+    {
+      "type": "input",
+      "title": "price",
+      "values": [
+        1325,
+        9999
+      ]
+    },
+    {
+      "type": "select",
+      "title": "colors",
+      "values": [
+        "yelow",
+        "red",
+        "blue"
+      ]
     }
   ]
 }

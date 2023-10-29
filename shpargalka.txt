@@ -1,0 +1,12 @@
+/?ordering=value
+/?ordering=-value
+/?search=value
+/?category_id=555
+
+
+####trelllo
+category_id = type;
+ordering = order || sort;
+sort querries
+for catalog: filter array query
+

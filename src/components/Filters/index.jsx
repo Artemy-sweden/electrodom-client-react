@@ -1,10 +1,13 @@
-function Filters() {
+import Select from "./Select";
+import filterCards from "../../functions/Filter";
+
+function Filters({ filters, catalog_url }) {
   return (
     <div className="filters">
-      <label className="checkbox">
-        <input type="checkbox" />
-        <p>под наркозом?</p>
-      </label>
+      {filters[0].values.map((item) => (
+        <Select item={item} />
+      ))}
+
       <div className="input">
         <p>Цена</p>
         <input type="text" placeholder="от 1000" />
@@ -18,7 +21,7 @@ function Filters() {
           <option value="синий">синий</option>
         </select>
       </div>
-      <button>еще?</button>
+      <button onClick={filterCards(filters, catalog_url)}>Поиск?</button>
     </div>
   );
 }

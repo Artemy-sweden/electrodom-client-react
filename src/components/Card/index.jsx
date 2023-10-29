@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
-function Card({ card, onAddToCart, onRemoveFromCart, status = false }) {
+function Card({ card, onAddProduct, onRemoveProduct, status = false }) {
   const [isItemAdded, setIsItemAdded] = React.useState(status);
 
   const onClickButton = () => {
-    isItemAdded ? onRemoveFromCart(card) : onAddToCart(card);
+    isItemAdded ? onRemoveProduct(card) : onAddProduct(card);
     setIsItemAdded(!isItemAdded);
   };
 

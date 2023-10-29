@@ -1,0 +1,237 @@
+/*********************AUTHERIZATION****************************/
+.authentification__container {
+  max-width: 70%;
+  margin: 50px auto;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  h4 {
+    margin: 20px 0;
+    padding-top: 20px;
+    letter-spacing: 0.05em;
+    font-size: 36px;
+  }
+  input {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 7px;
+    margin: 15px auto;
+    padding: 8px 10px;
+    width: 70%;
+    font-size: 18px;
+    background-color: #e6e6e6;
+    color: #5c5c5c;
+  }
+  button {
+    margin: 20px 0;
+    font-size: 20px;
+    border-radius: 7px;
+    color: #ffffff;
+    background-color: #282828;
+    padding: 10px 15px;
+    &:hover {
+      background-color: #181818;
+      cursor: pointer;
+    }
+  }
+  .parametrs {
+    display: flex;
+    margin: 0 100px;
+    justify-content: space-around;
+    text-decoration: none;
+    a {
+      margin: 40px;
+      font-size: 20px;
+      color: #181818;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/*******************REGISTRATION*****************************/
+
+.registration__container {
+  max-width: 70%;
+  margin: 50px auto;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  h4 {
+    margin: 20px 0;
+    padding-top: 20px;
+    letter-spacing: 0.05em;
+    font-size: 36px;
+  }
+  .input__data input {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 7px;
+    margin: 15px auto;
+    padding: 8px 10px;
+    width: 70%;
+    font-size: 18px;
+    background-color: #e6e6e6;
+    color: #5c5c5c;
+  }
+  .input__radio {
+    font-size: 16px;
+    text-align: left;
+    width: 70%;
+    margin: 0 auto;
+  }
+  input[type="radio"] {
+    accent-color: #232323;
+  }
+  .condition {
+    display: block;
+    margin: 10px 0;
+  }
+  button {
+    text-align: center;
+    margin: 15px auto;
+    font-size: 20px;
+    border-radius: 7px;
+    color: #ffffff;
+    background-color: #282828;
+    padding: 10px 15px;
+  }
+  button:hover {
+    background-color: #181818;
+    cursor: pointer;
+  }
+  .already__have__account {
+    padding: 0px 100px 10px;
+    justify-content: space-around;
+    text-decoration: none;
+    p {
+      padding: 10px 5px;
+    }
+    a {
+      font-size: 20px;
+      color: #181818;
+      line-height: 30px;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/***********************MEDIA-AUTH*****************************/
+@media screen and (max-width: 900px) {
+  .authentification__container {
+    h4 {
+      letter-spacing: 0.02em;
+      font-size: 30px;
+    }
+    input {
+      height: 40px;
+      font-size: 16px;
+    }
+    button {
+      padding: 7px 10px;
+      font-size: 16px;
+    }
+    .parametrs {
+      margin: 0 40px;
+      a {
+        margin: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 551px) {
+  .authentification__container {
+    h4 {
+      letter-spacing: 0.015em;
+      font-size: 20px;
+    }
+    input {
+      height: 30px;
+      font-size: 14px;
+      border-radius: 15px;
+    }
+    button {
+      margin: 10px 0;
+      padding: 5px 8px;
+      font-size: 14px;
+      border-radius: 15px;
+    }
+    .parametrs a {
+      font-size: 11px;
+      margin: 10px;
+    }
+  }
+}
+/****************MEDIA-REGISTR************************/
+@media screen and (max-width: 900px) {
+  .registration__container {
+    max-width: 90%;
+    margin: 50px auto;
+    h4 {
+      margin: 15px 0;
+      padding-top: 15px;
+      letter-spacing: 0.03em;
+      font-size: 30px;
+    }
+    .input__data input {
+      height: 40px;
+      border-radius: 6px;
+      margin: 12px auto;
+      padding: 5px 8px;
+      width: 80%;
+      font-size: 16px;
+    }
+    .input__radio {
+      width: 80%;
+    }
+  }
+}
+@media screen and (max-width: 551px) {
+  .registration__container {
+    max-width: 90%;
+    h4 {
+      margin: 12px 0;
+      padding-top: 12px;
+      letter-spacing: 0.02em;
+      font-size: 24px;
+    }
+    .input__data input {
+      height: 35px;
+      border-radius: 5px;
+      margin: 10px auto;
+      padding: 5px 7px;
+      width: 90%;
+      font-size: 14px;
+    }
+    .input__radio {
+      width: 90%;
+    }
+    label {
+      font-size: 13px;
+    }
+    button {
+      text-align: center;
+      margin: 10px auto;
+      font-size: 16px;
+      border-radius: 7px;
+      color: #ffffff;
+      background-color: #282828;
+      padding: 5px 8px;
+    }
+    .already__have__account {
+      font-size: 13px;
+    }
+  }
+}

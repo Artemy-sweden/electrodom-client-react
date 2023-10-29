@@ -1,70 +1,50 @@
 import React from "react";
 
 import Card from "../components/Card";
-import SearchBox from "../components/SearchBox";
+import SearchBox from "../components/Search";
+import SortBy from "../components/SortBy";
 
-function Home({ onAddToCart, onRemoveFromCart, cards, isLoading }) {
+import addCards from "../functions/Add";
+import removeCards from "../functions/Remove";
+// import sortCards from "../functions/Sort";
+// import filterCards from "../functions/Filter";
+import searchCards from "../functions/Search";
+import sortCards from "../functions/Sort";
+
+function Home({ cards, setCards, cartItems, setCartItems, isLoading, url }) {
+  console.log(cards);
   const [inputValue, setInputValue] = React.useState("");
-  const preloadArray = [
-    {
-      id: 0,
-      name: "Title_1",
-      provider: "provider",
-      category: "categ",
-      price: 0.01,
-      count: 1,
-      image: "url",
-      rating: 1.0,
-      description: "some text...",
-      discount: {
-        status: true,
-        value: "50%",
-      },
-    },
-  ];
-
   const onChangeInputValue = (event) => {
-    setInputValue(event.target.value);
-  };
-
-  const renderItems = () => {
-    const filtredItems = cards.filter((item) =>
-      item.name.toLowerCase().includes(inputValue.toLowerCase())
-    );
-    console.log("filtering...");
-    return (isLoading ? preloadArray : filtredItems).map((card) => (
-      //status={cartItems.find((item) => Number(item.id) === Number(card.id))}
-      <Card
-        card={card}
-        onAddToCart={(obj) => onAddToCart(obj)}
-        onRemoveFromCart={(obj) => onRemoveFromCart(obj)}
-        key={card.id}
-      />
-    ));
+    const srchVal = event.target.value;
+    setInputValue(srchVal);
+    searchCards(setCards, url + "/cards?_sort=name", srchVal);
   };
   return (
     <>
-      {console.log("Home renderrred")}
       <h4>Главная</h4>
-      <SearchBox
-        onChangeInputValue={onChangeInputValue}
-        inputValue={inputValue}
-      />
+      <div className="search-panel">
+        <SearchBox
+          onChangeInputValue={onChangeInputValue}
+          inputValue={inputValue}
+        />
+        <SortBy setData={setCards} url={url + "/cards?"} />
+      </div>
       Filters
-      <div className="items">{renderItems()}</div>
-      {/* <div className="items">
-        {cards.map((card) => (
-          <Card
-            card={card}
-            onAddToCart={(obj) => onAddToCart(obj)}
-            onRemoveFromCart={(obj) => onRemoveFromCart(obj)}
-            status={cartItems.find(
-              (item) => Number(item.id) === Number(card.id)
-            )}
-            key={card.id}
-          />
-        ))}
-      </div> */}
+      <div className="items">
+        {isLoading ? (
+          <h1>LOADING...</h1>
+        ) : (
+          cards.map((card) => (
+            <Card
+              card={card}
+              onAddProduct={(obj) => addCards({ setCartItems, obj, url })}
+              onRemoveProduct={(obj) => removeCards({ setCartItems, obj, url })}
+              status={cartItems.some((elem) => elem.id == card.id)}
+              key={card.id}
+            />
+          ))
+        )}
+      </div>
     </>
   );
 }

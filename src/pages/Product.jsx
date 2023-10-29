@@ -2,12 +2,14 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-import Button from "../components/Button/Button";
+import Popup from "../components/Popup";
 
 function Product() {
   const { id } = useParams();
   const [productData, setProductData] = React.useState([]);
+  const [popupArray, setPopupArray] = React.useState([]);
   const [isProductLoaded, setIsProductLoaded] = React.useState(false);
+  const [imagePopupOpened, setImagePopupOpened] = React.useState(false);
   React.useEffect(() => {
     async function getProductInfo() {
       const prodResp = await axios.get(`http://localhost:3001/products/${id}`);
@@ -15,26 +17,29 @@ function Product() {
       setIsProductLoaded(true);
     }
     getProductInfo();
-    // fetch(`http://localhost:3001/products/${id}`)
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((json) => {
-    //     setProductData(json);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   })
-    //   .finally(console.log("sucksessss"));
   }, []);
+
+  const onClickPhoto = (photosArray, activePh) => {
+    setPopupArray(photosArray);
+    setImagePopupOpened(activePh);
+  };
 
   return isProductLoaded ? (
     <>
-      {console.log(productData)}
+      <Popup
+        imagePopupOpened={imagePopupOpened}
+        setImagePopupOpened={setImagePopupOpened}
+        popupArray={popupArray}
+      />
       <div className="product">
         <div className="product__photos">
-          {productData.photos.map((photo) => (
-            <img src={photo} alt="product-photo" />
+          {productData.photos.map((photo, index) => (
+            <img
+              src={photo.path}
+              alt="product"
+              key={index}
+              onClick={() => onClickPhoto(productData.photos, photo)}
+            />
           ))}
         </div>
         <div className="product__content">
@@ -45,7 +50,7 @@ function Product() {
             <p>{productData.description}</p>
           </div>
           <div className="product__buttons">
-            <Button />
+            <button>hi?</button>
           </div>
         </div>
       </div>
@@ -79,7 +84,11 @@ function Product() {
               <div className="text">{comment.text}</div>
               <div className="images">
                 {comment.photos.map((photo) => (
-                  <img src={photo} alt="comment-photo" />
+                  <img
+                    src={photo.path}
+                    alt="comment"
+                    onClick={() => onClickPhoto(comment.photos, photo)}
+                  />
                 ))}
               </div>
             </div>

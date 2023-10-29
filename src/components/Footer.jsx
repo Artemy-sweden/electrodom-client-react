@@ -56,7 +56,7 @@ function Footer() {
         </div>
         <div className="footer__section">
           <h4>
-            <a href="#">Покупки</a>
+            <Link to="/purchases">Покупки</Link>
           </h4>
           <ul>
             <li>
@@ -72,7 +72,7 @@ function Footer() {
         </div>
         <div className="footer__section">
           <h4>
-            <a href="#">О нас</a>
+            <Link to="/about">О нас</Link>
           </h4>
           <ul>
             <li>

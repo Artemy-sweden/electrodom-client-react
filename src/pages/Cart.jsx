@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "../components/Card";
 
-function Cart({ cartItems, onAddToCart, onRemoveFromCart }) {
+function Cart({ cartItems, onAddProduct, onRemoveProduct }) {
   return (
     <>
       {console.log("Cart renderrred")}
@@ -11,8 +11,8 @@ function Cart({ cartItems, onAddToCart, onRemoveFromCart }) {
         {cartItems.map((card) => (
           <Card
             card={card}
-            onAddToCart={(item) => onAddToCart(item)}
-            onRemoveFromCart={(item) => onRemoveFromCart(item)}
+            onAddProduct={(item) => onAddProduct(item)}
+            onRemoveProduct={(item) => onRemoveProduct(item)}
             status={true}
             key={card.id}
           />
