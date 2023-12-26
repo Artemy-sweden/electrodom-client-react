@@ -174,11 +174,7 @@
             "rating": 5
           },
           "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          "photos": [
-            "url",
-            "url2",
-            "url3"
-          ]
+          "photos": ["url", "url2", "url3"]
         }
       ]
     },
@@ -189,11 +185,7 @@
       "category": "Lustri",
       "price": 150,
       "count": 1,
-      "photos": [
-        "url",
-        "url2",
-        "url3"
-      ],
+      "photos": ["url", "url2", "url3"],
       "rating": 4.5,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "discount": {
@@ -229,11 +221,7 @@
             "rating": 3
           },
           "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          "photos": [
-            "url",
-            "url2",
-            "url3"
-          ]
+          "photos": ["url", "url2", "url3"]
         }
       ]
     }
@@ -255,80 +243,107 @@
       "category_name": "category_5"
     }
   ],
-  "cart": [
-    {
-      "id": 1,
-      "name": "Lampa neobiknovennaja ahahaahah",
-      "provider": "Beltelecom",
-      "category": "category_2",
-      "price": 150,
-      "count": 1,
-      "image": "url",
-      "rating": 3.5,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "discount": {
-        "status": false,
-        "value": "30%"
-      }
-    },
-    {
-      "id": 2,
-      "name": "LED podsvetka-svetka hihihi",
-      "provider": "Kiivstar",
-      "category": "Lampi",
-      "price": 1500,
-      "count": 1,
-      "image": "url",
-      "rating": 3.5,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "discount": {
-        "status": false,
-        "value": "30%"
-      }
-    },
-    {
-      "id": 4,
-      "name": "LED podsvetka-svetka hihihi",
-      "provider": "Kiivstar",
-      "category": "Lampi",
-      "price": 500,
-      "count": 1,
-      "image": "url",
-      "rating": 3.5,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "discount": {
-        "status": false,
-        "value": "30%"
-      }
-    }
-  ],
+
   "filters": [
     {
       "type": "checkbox",
       "title": "cars",
-      "values": [
-        "lamborgini",
-        "ferrari",
-        "tesla",
-        "cow?"
-      ]
+      "values": ["lamborgini", "ferrari", "tesla", "cow?"]
     },
     {
       "type": "input",
       "title": "price",
-      "values": [
-        1325,
-        9999
-      ]
+      "values": [1325, 9999]
     },
     {
       "type": "select",
       "title": "colors",
-      "values": [
-        "yelow",
-        "red",
-        "blue"
+      "values": ["yelow", "red", "blue"]
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "name": "+375291234567",
+      "password": "qwerty12345",
+      "role": "user",
+      "cart": [
+        {
+          "id": 1,
+          "name": "Lampa neobiknovennaja ahahaahah",
+          "provider": "Beltelecom",
+          "category": "category_2",
+          "price": 150,
+          "count": 1,
+          "image": "url",
+          "rating": 3.5,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "discount": {
+            "status": false,
+            "value": "30%"
+          }
+        },
+        {
+          "id": 2,
+          "name": "LED podsvetka-svetka hihihi",
+          "provider": "Kiivstar",
+          "category": "Lampi",
+          "price": 1500,
+          "count": 1,
+          "image": "url",
+          "rating": 3.5,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "discount": {
+            "status": false,
+            "value": "30%"
+          }
+        },
+        {
+          "id": 4,
+          "name": "LED podsvetka-svetka hihihi",
+          "provider": "Kiivstar",
+          "category": "Lampi",
+          "price": 500,
+          "count": 1,
+          "image": "url",
+          "rating": 3.5,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "discount": {
+            "status": false,
+            "value": "30%"
+          }
+        }
       ]
+    },
+    {
+      "id": 1,
+      "name": "+375339876543",
+      "password": "qwerty12345",
+      "role": "user",
+      "cart": [
+        {
+          "id": 2,
+          "name": "LED podsvetka-svetka hihihi",
+          "provider": "Kiivstar",
+          "category": "Lampi",
+          "price": 1500,
+          "count": 1,
+          "image": "url",
+          "rating": 3.5,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "discount": {
+            "status": false,
+            "value": "30%"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "+375441111111",
+      "password": "adminadmin",
+      "role": "admin",
+      "cart": []
     }
   ]
 }

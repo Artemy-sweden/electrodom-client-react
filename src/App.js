@@ -31,12 +31,12 @@ function App() {
         const [homeResp, categoriesResp, cartResp] = await Promise.all([
           axios.get(`${url}/cards?_sort=name`),
           axios.get(`${url}/categories`),
-          axios.get(`${url}/cart?_sort=id`),
+          axios.get(`${url}/users/0?_sort=id`),
         ]);
         setIsLoading(false);
         setCards(homeResp.data);
         setCategories(categoriesResp.data);
-        setCartItems(cartResp.data);
+        setCartItems(cartResp.data.cart);
       } catch (error) {
         console.warn("errorrrr", error);
       }

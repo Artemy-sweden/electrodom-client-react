@@ -1,6 +1,11 @@
+import { useState } from "react";
+
 function LoginPage() {
-  const userStatus = true;
-  return userStatus ? (
+  const [logState, setLogState] = useState(true);
+  const changeAuthMode = () => {
+    setLogState(!logState);
+  };
+  return logState ? (
     <div class="authentification__container">
       <h4>Авторизация</h4>
       <form action="" method="post">
@@ -11,7 +16,9 @@ function LoginPage() {
         </button>
         <div class="parametrs">
           <a href="#">Забыли пароль?</a>
-          <a href="#">Регистрация</a>
+          <a href="#" onClick={() => changeAuthMode()}>
+            Регистрация
+          </a>
         </div>
       </form>
     </div>
@@ -20,7 +27,6 @@ function LoginPage() {
       <h4>Регистрация</h4>
       <form action="" method="post">
         <div class="input__data">
-          <input type="text" id="login" size="40" placeholder="Логин" />
           <input type="email" id="email" size="40" placeholder="E-mail" />
           <input type="password" id="password" size="40" placeholder="Пароль" />
           <input
@@ -33,22 +39,25 @@ function LoginPage() {
         <div class="input__radio">
           <p>Я согласен(-на)</p>
           <div class="condition">
+            <input type="checkbox" id="radio_two" class="radio" />
+            <label for="two"> на обработку персональных данных</label>
+          </div>
+          <div class="condition">
             <input type="checkbox" id="radio_one" class="radio" />
             <label for="one">
+              {" "}
               с пользовательским соглашением на получение e-mail пассылки
             </label>
           </div>
-          <div class="condition">
-            <input type="checkbox" id="radio_two" class="radio" />
-            <label for="two">на обработку персональных данных</label>
-          </div>
         </div>
         <button type="submit" value="Войти">
-          Регистрация
+          Зарегистрироваться
         </button>
         <div class="already__have__account">
-          <p>Уже есть аккаунт?</p>
-          <a href="#">Войти</a>
+          Уже есть аккаунт?
+          <a href="#" onClick={() => changeAuthMode()}>
+            Войти
+          </a>
         </div>
       </form>
     </div>

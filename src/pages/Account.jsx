@@ -8,11 +8,12 @@ function Account({ cartItems, onAddProduct, onRemoveProduct }) {
         <div class="personal__data__wrapper">
           <h2>Личные данные</h2>
           <div class="personal__data__container">
-            <div class="personal__photo"></div>
+            <div class="personal__photo">
+              <img src="../assets/img/user2.png" alt="" />
+            </div>
             <div class="personal__data_description">
               <p>Какой-то ноунейм</p>
               <p>Логин: чебурек</p>
-              <p>Пароль: **********</p>
               <p>Не звонить по +375291234567</p>
             </div>
           </div>
